@@ -1,17 +1,25 @@
 import { getAllPostIds, getPostData } from '../../lib/post'
 import Head from 'next/head'
+import Nav from '../../components/Nav'
+import styled from 'styled-components'
+
+const PostStyled = styled.div`
+margin: 0 auto;
+max-width: 800px;
+`
 
 export default function Post({ postData }) {
   postData = postData[0]
   return (
-    <div>
+    <PostStyled>
       <Head>
         <title>{postData.name}</title>
       </Head>
+      <Nav />
       <article>
         <h1 >{postData.name}</h1>
       </article>
-    </div>
+    </PostStyled>
   )
 }
 
