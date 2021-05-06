@@ -1,24 +1,39 @@
-import { getAllPostIds, getPostData } from '../../lib/post'
+import { getAllPostIds, getPostData, count } from '../../lib/post'
 import Head from 'next/head'
-import Nav from '../../components/Nav'
+import Image from 'next/image'
 import styled from 'styled-components'
+import Nav from '../../components/Nav'
+import Pagination from '../../components/Pagination'
+import GlobalStyles from '../../components/styles/GlobalStyles'
 
 const PostStyled = styled.div`
 margin: 0 auto;
-max-width: 800px;
+max-width: var(--maxWidth);
 `
 
 export default function Post({ postData }) {
   postData = postData[0]
+  const page = parseInt(postData.id)
+  const pageCount = count
+  
   return (
     <PostStyled>
+      <GlobalStyles/>
       <Head>
         <title>{postData.name}</title>
       </Head>
       <Nav />
       <article>
         <h1 >{postData.name}</h1>
+        <Image
+          src={postData.imageUrl}
+          alt="test"
+          width="1000"
+          height="563"
+          layout="responsive"
+        />
       </article>
+      <Pagination page={page} count={pageCount}/>
     </PostStyled>
   )
 }

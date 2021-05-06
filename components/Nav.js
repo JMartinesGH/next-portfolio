@@ -8,12 +8,23 @@ const NavStyled = styled.nav`
 position: fixed;
 top: 0;
 left: 0;
-background: blue;
-transition: all 0.2s ease-in;
+background: var(--black, #000);
+transition: all 0.3s ease-in;
 transform: ${({ toggled }) => toggled ? 'translateX(0)' : 'translateX(-100%)'};
+/* padding: 1.2rem; */
+min-height: 100vh;
+margin: 0;
 
-a{
+li{
+  list-style: none;
+  padding: 1rem 1.2rem;
   color: var(--white,#fff);
+  cursor: pointer;
+  background: rgba(0,0,0,0.0);
+  transition: background 0.2s ease-in;
+  &:hover{
+    background: rgba(58,58,58,1.0);
+  }
 }
 `
 
@@ -41,12 +52,15 @@ export default function Nav() {
         JM
       </LogoButton>
       <Menu >
+        <Link href='/'>
+          <li>Return Home</li>
+        </Link>
         {postData.map(post => (
-          <li key={post.id}>
-            <Link href={`/posts/${post.id}`}>
-              {post.name}
-            </Link>
-          </li>
+          <Link key={post.id} href={`/posts/${post.id}`}>
+            <li onClick={() => setToggled(!toggled)}>
+                {post.name}
+            </li>
+          </Link>
         ))}
       </Menu>
     </NavStyled>
