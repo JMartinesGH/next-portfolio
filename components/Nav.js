@@ -11,26 +11,35 @@ left: 0;
 background: blue;
 transition: all 0.2s ease-in;
 transform: ${({ toggled }) => toggled ? 'translateX(0)' : 'translateX(-100%)'};
-button{
-  position: absolute;
-  right: -50px;
-  top: 0;
-  width: 50px;
-  height: 50px;
-}
 
 a{
   color: var(--white,#fff);
 }
 `
 
+const LogoButton = styled.button`
+  position: absolute;
+  right: -50px;
+  top: 0;
+  width: 50px;
+  height: 50px;
+  font-size: 2rem;
+  margin: 0;
+  padding: 0;
+  outline: none;
+  border: none;
+  color: var(--white, #fff);
+  background-color: var(--black, #000);
+  cursor: pointer;
+`
+
 export default function Nav() {
   const [toggled, setToggled] = useState(false)
   return (
     <NavStyled toggled={toggled}>
-      <button onClick={() => setToggled(!toggled)}>
+      <LogoButton onClick={() => setToggled(!toggled)}>
         JM
-      </button>
+      </LogoButton>
       <Menu >
         {postData.map(post => (
           <li key={post.id}>
