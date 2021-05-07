@@ -34,7 +34,7 @@ export default function Post({ postData }) {
         <h1><span>{postData.name}</span></h1>
         <Image
           src={postData.imageUrl}
-          alt="test"
+          alt={postData.name}
           width="1000"
           height="563"
           layout="responsive"
