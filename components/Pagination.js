@@ -18,7 +18,7 @@ a:hover{
 }
 
 a[aria-disabled='true'] {
-  color: white;
+  color: #484848;
   background-color: #7d7d7d;
   pointer-events: none;
 }

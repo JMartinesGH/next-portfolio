@@ -10,14 +10,31 @@ const PostStyled = styled.div`
 margin: 0 auto;
 max-width: var(--maxWidth);
 
-h1 span{
-  margin: 0 0 1rem;
-  background: var(--black);
-  color: var(--white, #fff);
-  padding: 1rem 0.5rem;
+h1{
+  display: flex;
+  justify-content: space-between;
+  a{
+    color: white;
+    text-decoration: none;
+  }
+  span{
+    margin: 0 0 1rem 8rem;
+    background: var(--black);
+    color: var(--white, #fff);
+    padding: 1rem 0.5rem;
+
+    @media screen and (min-width: 1024px){
+      margin: 0 0 1rem;
+    }
+  }
+  .link-out:hover{
+    background: #3a3a3a;
+  }
 }
+
 img{
   max-width: var(--maxWidth);
+  width: 100%;
 }
 `
 
@@ -35,7 +52,10 @@ export default function Post({ postData }) {
       </Head>
       <Nav />
       <article>
-        <h1><span>{postData.name}</span></h1>
+          <h1>
+            <span>{postData.name}</span>
+            <span className='link-out'><a href={postData.url}>Link</a></span>
+          </h1>
         {/* <Image
           src={postData.imageUrl}
           alt={postData.name}
@@ -46,7 +66,6 @@ export default function Post({ postData }) {
         <img src={postData.imageUrl} alt={postData.name}/>
       </article>
       <Pagination page={page} count={pageCount} />
-      <div>{postData.url}</div>
     </PostStyled>
     </>
   )

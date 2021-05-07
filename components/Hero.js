@@ -26,6 +26,10 @@ h4 a{
   font-size: 1.75rem;
   padding: 1rem;
   color: white;
+  text-decoration: none;
+  &:hover{
+    background: #3a3a3a;
+  }
 }
 span{
   padding: 1.5rem 0.5rem;
