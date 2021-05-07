@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import styled from 'styled-components'
 
+// the homepage hero styling, uses flex column to set items vertically
 const HeroStyled = styled.div`
 display: flex;
 align-self: center;
@@ -35,7 +36,7 @@ span{
   padding: 1.5rem 0.5rem;
 }
 `
-
+// add flexWrapper to center on page horizontally
 const FlexWrapper = styled.div`
 display: flex;
 justify-content: center;

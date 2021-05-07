@@ -1,5 +1,6 @@
 import styled from 'styled-components'
 
+// list wrapper for nav
 const MenuList = styled.ul`
 padding: 0;
 `

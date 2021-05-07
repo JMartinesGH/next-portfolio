@@ -32,9 +32,9 @@ const responsive = {
 }
 
 export default function Post({ postData }) {
-  postData = postData[0]
-  const page = parseInt(postData.id)
-  const pageCount = count
+  postData = postData[0] // make the object easier to work with
+  const page = parseInt(postData.id) //get "page" number
+  const pageCount = count // get total number of "pages"
   
   return (
     <>
@@ -45,15 +45,17 @@ export default function Post({ postData }) {
         </Head>
         <Nav />
         <article>
-            <h1>
-              <span>{postData.name}</span>
-              {postData.url && (
-                <span className='link-out'><a href={postData.url} target="_blank">↗</a></span>
-              )}
-            </h1>
+          <h1>
+            <span>{postData.name}</span>
+            {postData.url && (
+              <span className='link-out'><a href={postData.url} target="_blank">↗</a></span>
+            )}
+          </h1>
+          {/* if the imageUrl is single image user img element */}
           {typeof postData.imageUrl === "string" && (
             <img src={postData.imageUrl} alt={postData.name}/>
           )}
+          {/* if the imageUrl is an array, display carousel*/}
           {typeof postData.imageUrl === "object" && (
             <Carousel
               swipeable={true}
@@ -79,6 +81,7 @@ export default function Post({ postData }) {
   )
 }
 
+// needed for static generation of links on build
 export async function getStaticPaths() {
   const paths = getAllPostIds()
   return {
@@ -87,6 +90,7 @@ export async function getStaticPaths() {
   }
 }
 
+// takes in page id and uses it to the hit "api" for the correct data
 export async function getStaticProps({ params }) {
   const postData = await getPostData(params.id)
   return {

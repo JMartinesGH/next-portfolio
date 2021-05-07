@@ -4,6 +4,7 @@ import { postData } from "../posts/postData"
 import Link from 'next/link'
 import { useState } from "react";
 
+// styled navigation menu
 const NavStyled = styled.nav`
 position: fixed;
 top: 0;
@@ -11,7 +12,6 @@ left: 0;
 background: var(--black, #000);
 transition: all 0.3s ease-in;
 transform: ${({ toggled }) => toggled ? 'translateX(0)' : 'translateX(-100%)'};
-/* padding: 1.2rem; */
 min-height: 100vh;
 margin: 0;
 z-index: 999;
@@ -28,7 +28,7 @@ li{
   }
 }
 `
-
+// the button for the nav menu
 const LogoButton = styled.button`
   position: absolute;
   right: 0;
@@ -54,7 +54,7 @@ export default function Nav() {
       <LogoButton toggled={toggled} onClick={() => setToggled(!toggled)}>
         JM
       </LogoButton>
-      <Menu >
+      <Menu>
         <Link href='/'>
           <li>Return Home</li>
         </Link>
