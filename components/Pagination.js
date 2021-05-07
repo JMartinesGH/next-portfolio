@@ -5,8 +5,21 @@ const PaginationStyles = styled.div`
 display: flex;
 justify-content: space-between;
 padding-top: 2rem;
+a{
+  background: #000;
+  color: #fff;
+  padding: .75rem;
+  transition: background-color 0.3s ease-in;
+}
+
+a:hover{
+  background-color: #3a3a3a;
+  text-decoration: none;
+}
+
 a[aria-disabled='true'] {
-  color: grey;
+  color: white;
+  background-color: #7d7d7d;
   pointer-events: none;
 }
 `
