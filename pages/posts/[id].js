@@ -41,7 +41,7 @@ export default function Post({ postData }) {
         />
       </article>
       <Pagination page={page} count={pageCount} />
-      <div>{postData.name}</div>
+      <div>{postData.url}</div>
     </PostStyled>
   )
 }
