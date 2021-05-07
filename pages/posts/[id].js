@@ -40,7 +40,8 @@ export default function Post({ postData }) {
           layout="responsive"
         />
       </article>
-      <Pagination page={page} count={pageCount}/>
+      <Pagination page={page} count={pageCount} />
+      <div>{postData.name}</div>
     </PostStyled>
   )
 }
