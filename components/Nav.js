@@ -2,7 +2,7 @@ import styled from 'styled-components'
 import Menu from './Menu'
 import { postData } from "../posts/postData"
 import Link from 'next/link'
-import { useEffect, useState } from "react";
+import { useState } from "react";
 
 const NavStyled = styled.nav`
 position: fixed;
@@ -14,6 +14,7 @@ transform: ${({ toggled }) => toggled ? 'translateX(0)' : 'translateX(-100%)'};
 /* padding: 1.2rem; */
 min-height: 100vh;
 margin: 0;
+z-index: 999;
 
 li{
   list-style: none;
@@ -30,7 +31,7 @@ li{
 
 const LogoButton = styled.button`
   position: absolute;
-  right: -50px;
+  right: 0;
   top: 0;
   width: 50px;
   height: 50px;
@@ -42,13 +43,15 @@ const LogoButton = styled.button`
   color: var(--white, #fff);
   background-color: var(--black, #000);
   cursor: pointer;
+  transition: all 0.3s ease-in;
+  transform: ${({ toggled }) => toggled ? 'translateX(0%)' : 'translateX(100%)'};
 `
 
 export default function Nav() {
   const [toggled, setToggled] = useState(false)
   return (
     <NavStyled toggled={toggled}>
-      <LogoButton onClick={() => setToggled(!toggled)}>
+      <LogoButton toggled={toggled} onClick={() => setToggled(!toggled)}>
         JM
       </LogoButton>
       <Menu >

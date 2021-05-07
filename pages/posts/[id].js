@@ -9,6 +9,13 @@ import GlobalStyles from '../../components/styles/GlobalStyles'
 const PostStyled = styled.div`
 margin: 0 auto;
 max-width: var(--maxWidth);
+
+h1 span{
+  margin: 0 0 1rem;
+  background: var(--black);
+  color: var(--white, #fff);
+  padding: 1rem 0.5rem;
+}
 `
 
 export default function Post({ postData }) {
@@ -24,7 +31,7 @@ export default function Post({ postData }) {
       </Head>
       <Nav />
       <article>
-        <h1 >{postData.name}</h1>
+        <h1><span>{postData.name}</span></h1>
         <Image
           src={postData.imageUrl}
           alt="test"
