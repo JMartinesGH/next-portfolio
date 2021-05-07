@@ -16,6 +16,9 @@ h1 span{
   color: var(--white, #fff);
   padding: 1rem 0.5rem;
 }
+img{
+  max-width: var(--maxWidth);
+}
 `
 
 export default function Post({ postData }) {
@@ -24,25 +27,28 @@ export default function Post({ postData }) {
   const pageCount = count
   
   return (
+    <>
+    <GlobalStyles/>
     <PostStyled>
-      <GlobalStyles/>
       <Head>
         <title>{postData.name}</title>
       </Head>
       <Nav />
       <article>
         <h1><span>{postData.name}</span></h1>
-        <Image
+        {/* <Image
           src={postData.imageUrl}
           alt={postData.name}
           width="1000"
           height="563"
           layout="responsive"
-        />
+        /> */}
+        <img src={postData.imageUrl} alt={postData.name}/>
       </article>
       <Pagination page={page} count={pageCount} />
       <div>{postData.url}</div>
     </PostStyled>
+    </>
   )
 }
 
