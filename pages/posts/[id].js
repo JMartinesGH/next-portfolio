@@ -9,6 +9,7 @@ import GlobalStyles from '../../components/styles/GlobalStyles'
 const PostStyled = styled.div`
 margin: 0 auto;
 max-width: var(--maxWidth);
+min-height: 100vh;
 
 h1{
   display: flex;
@@ -38,6 +39,14 @@ img{
 }
 `
 
+const PostDetails = styled.div`
+  margin: 0 auto;
+  max-width: var(--maxWidth);
+  background: var(--black);
+  color: var(--white, #fff);
+  padding: 1rem;
+`
+
 export default function Post({ postData }) {
   postData = postData[0]
   const page = parseInt(postData.id)
@@ -46,27 +55,30 @@ export default function Post({ postData }) {
   return (
     <>
     <GlobalStyles/>
-    <PostStyled>
-      <Head>
-        <title>{postData.name}</title>
-      </Head>
-      <Nav />
-      <article>
-          <h1>
-            <span>{postData.name}</span>
-            <span className='link-out'><a href={postData.url}>↗</a></span>
-          </h1>
-        {/* <Image
-          src={postData.imageUrl}
-          alt={postData.name}
-          width="1000"
-          height="563"
-          layout="responsive"
-        /> */}
-        <img src={postData.imageUrl} alt={postData.name}/>
-      </article>
-      <Pagination page={page} count={pageCount} />
-    </PostStyled>
+      <PostStyled>
+        <Head>
+          <title>{postData.name}</title>
+        </Head>
+        <Nav />
+        <article>
+            <h1>
+              <span>{postData.name}</span>
+              <span className='link-out'><a href={postData.url}>↗</a></span>
+            </h1>
+          {/* <Image
+            src={postData.imageUrl}
+            alt={postData.name}
+            width="1000"
+            height="563"
+            layout="responsive"
+          /> */}
+          <img src={postData.imageUrl} alt={postData.name}/>
+        </article>
+        <Pagination page={page} count={pageCount} />
+      </PostStyled>
+      <PostDetails>
+        {postData.details}
+      </PostDetails>
     </>
   )
 }
