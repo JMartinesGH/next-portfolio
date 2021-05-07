@@ -98,7 +98,7 @@ export default function Post({ postData }) {
             <h1>
               <span>{postData.name}</span>
               {postData.url && (
-                <span className='link-out'><a href={postData.url}>↗</a></span>
+                <span className='link-out'><a href={postData.url} target="_blank">↗</a></span>
               )}
             </h1>
           {typeof postData.imageUrl === "string" && (

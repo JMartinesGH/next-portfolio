@@ -65,6 +65,9 @@ export default function Nav() {
             </li>
           </Link>
         ))}
+        <Link href='/tools'>
+          <li>Tools Used</li>
+        </Link>
       </Menu>
     </NavStyled>
   )
