@@ -54,7 +54,7 @@ export default function Post({ postData }) {
       <article>
           <h1>
             <span>{postData.name}</span>
-            <span className='link-out'><a href={postData.url}>Link</a></span>
+            <span className='link-out'><a href={postData.url}>↗</a></span>
           </h1>
         {/* <Image
           src={postData.imageUrl}
