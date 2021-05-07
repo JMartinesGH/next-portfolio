@@ -19,6 +19,9 @@ export default function ToolsPage() {
       </Head>
       <Nav />
       <Tools>
+        <p>
+          For this presentation I used Next.js and I'm serving the site via Netlify. Other tools I'm using are Styled Components for CSS in JS, NProgress for progress bars, and react-multi-carousel for a carousel on the pages with multiple images. The animated gradient is based on a Code Pen linked below. 
+        </p>
         <ul>
           <li>
             <a href="https://nextjs.org/" target="_blank">
@@ -38,6 +41,11 @@ export default function ToolsPage() {
           <li>
             <a href="https://ricostacruz.com/nprogress/" target="_blank">
               NProgress
+            </a>
+          </li>
+          <li>
+            <a href="https://codepen.io/P1N2O/pen/pyBNzX" target="_blank">
+              Code Pen - Pure CSS Animated Gradient Background
             </a>
           </li>
         </ul>
