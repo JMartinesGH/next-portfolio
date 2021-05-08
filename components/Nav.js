@@ -45,6 +45,10 @@ const LogoButton = styled.button`
   cursor: pointer;
   transition: all 0.3s ease-in;
   transform: ${({ toggled }) => toggled ? 'translateX(0%)' : 'translateX(100%)'};
+
+  &:hover{
+    background-color: var(--grey, #3a3a3a);
+  }
 `
 
 export default function Nav() {

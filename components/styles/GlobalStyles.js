@@ -1,6 +1,13 @@
 import { createGlobalStyle } from 'styled-components';
 
 const GlobalStyles = createGlobalStyle`
+  @font-face{
+    font-family: 'Oswald';
+    public/Oswald/static/Oswald-Medium.ttf
+    src: url('/Oswald/static/Oswald-Medium.ttf') format('ttf');
+    font-weight: normal;
+    font-style: normal;
+  }
   html{
     --red: #ff0000;
     --black: #000000;
@@ -18,7 +25,7 @@ const GlobalStyles = createGlobalStyle`
     box-sizing: inherit;
   }
   body{
-    font-family: ---apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-family: 'Oswald', ---apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     padding: 0;
     margin: 0;
     font-size: 1.5rem;
