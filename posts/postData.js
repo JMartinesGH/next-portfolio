@@ -25,11 +25,11 @@ export const postData = [
     "name": "Aruba 3D Island Tour",
     "url": "",
     "imageUrl": [
+      "/images/aruba/aruba-logo-color.gif",
       "/images/aruba/airplane-rotation.gif",
       "/images/aruba/aloe-rotation.gif",
       "/images/aruba/alto-vista-chapel.gif",
       "/images/aruba/anchor-rotation.gif",
-      "/images/aruba/aruba-logo-color.gif",
       "/images/aruba/ayo-rocks-rotation.gif",
       "/images/aruba/butterfly-farm-subtle.gif",
       "/images/aruba/cactus-rotation.gif",

@@ -1,7 +1,5 @@
 import { getAllPostIds, getPostData, count } from '../../lib/post'
 import Head from 'next/head'
-import Image from 'next/image'
-import styled from 'styled-components'
 import Nav from '../../components/Nav'
 import Pagination from '../../components/Pagination'
 import GlobalStyles from '../../components/styles/GlobalStyles'
@@ -10,6 +8,7 @@ import PostDetails from '../../components/styles/PostDetails'
 
 import Carousel from 'react-multi-carousel';
 import 'react-multi-carousel/lib/styles.css';
+import Picture from '../../components/Picture'
 
 const responsive = {
   superLargeDesktop: {
@@ -53,11 +52,7 @@ export default function Post({ postData }) {
           </h1>
           {/* if the imageUrl is single image user img element */}
           {typeof postData.imageUrl === "string" && (
-            <picture>
-              <source srcset={`${postData.imageUrl}?nf_resize=fit&w=1000`} media="(min-width: 1024px)" />
-              <source srcset={`${postData.imageUrl}?nf_resize=fit&w=700`} media="(min-width: 740px)" />
-              <img src={`${postData.imageUrl}?nf_resize=fit&w=500`} alt={postData.name} />
-            </picture>
+            <Picture url={postData.imageUrl} alt={postData.name}/>
           )}
           {/* if the imageUrl is an array, display carousel*/}
           {typeof postData.imageUrl === "object" && (
