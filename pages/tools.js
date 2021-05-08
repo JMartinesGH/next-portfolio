@@ -12,6 +12,21 @@ min-height: 100vh;
 a{
   text-decoration: underline;
   font-weight: bold;
+  color: white;
+
+}
+
+p{
+  background: var(--black);
+  color: var(--white, #fff);
+  padding: 1rem;
+}
+
+ul{
+  background: var(--black);
+  color: var(--white, #fff);
+  display: inline-block;
+  padding: 1rem 1rem 1rem 3rem;
 }
 `
 
