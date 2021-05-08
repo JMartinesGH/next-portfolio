@@ -6,6 +6,17 @@ const PostDetails = styled.div`
   background: var(--black);
   color: var(--white, #fff);
   padding: 1rem;
+  position: relative;
+
+  &:before{
+    content: '';
+    border: 16px solid var(--black);
+    border-color: transparent transparent var(--black) transparent;
+    position: absolute;
+    top: -50px;
+    left: 50%;
+    transform: translateX(-50%);
+  }
 `
 
 export default PostDetails
