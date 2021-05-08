@@ -53,7 +53,11 @@ export default function Post({ postData }) {
           </h1>
           {/* if the imageUrl is single image user img element */}
           {typeof postData.imageUrl === "string" && (
-            <img src={postData.imageUrl} alt={postData.name}/>
+            <picture>
+              <source srcset={`${postData.imageUrl}?nf_resize=fit&w=700`} media="(min-width: 1200px)" />
+              <source srcset={`${postData.imageUrl}?nf_resize=fit&w=600`} media="(min-width: 740px)" />
+              <img src={`${postData.imageUrl}?nf_resize=fit&w=500`} alt={postData.name} />
+            </picture>
           )}
           {/* if the imageUrl is an array, display carousel*/}
           {typeof postData.imageUrl === "object" && (
