@@ -3,7 +3,6 @@ import { createGlobalStyle } from 'styled-components';
 const GlobalStyles = createGlobalStyle`
   @font-face{
     font-family: 'Oswald';
-    public/Oswald/static/Oswald-Medium.ttf
     src: url('/Oswald/static/Oswald-Medium.ttf') format('ttf');
     font-weight: normal;
     font-style: normal;
